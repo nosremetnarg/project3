@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import roysterLogo from './royster svg.svg';
 import './App.css';
+import Weather from '../src/components/Weather/Weather'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <h1>
           Roysters NC
         </h1>
+        <Weather />
       </header>
     </div>
   );
