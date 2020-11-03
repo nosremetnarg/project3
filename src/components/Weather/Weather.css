@@ -1,7 +1,22 @@
 .weatherBox {
     background-color: aliceblue;
     color: black;
+    border: 2px solid white;
+    box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
+    width: 80%; 
+   
+    
+    align-items: center;
 }
-.temp {
-    color: black;
+
+.weatherBox p i {
+ color: cornsilk;
+ text-shadow: 1.5px 1.5px rgba(0,0,0,0.5);
+ animation: rotateSun 20s infinite linear;
+}
+
+@keyframes rotateSun {
+    to {
+        transform: rotate(360deg);
+    }
 }
