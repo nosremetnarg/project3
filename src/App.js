@@ -20,7 +20,7 @@ constructor (props) {
           <img src={roysterLogo} className="App-logo" alt="logo" />
           <p>Let's do this :)</p>
           <h1>Roysters NC</h1>
-          <Weather getWeather={this.getCurrent} />
+          <Weather  />
         </header>
       </div>
     );

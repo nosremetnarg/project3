@@ -1,39 +1,74 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import "./Weather.css";
-import dotenv from 'dotenv'
+import WeatherInfo from "./WeatherInfo";
+import dotenv from "dotenv";
 require("dotenv").config();
 
 function WeatherContainer() {
-
-    const myKey = process.env.REACT_APP_WEATHER_API;
-    console.log(myKey)
-    const lat = 34;
-      const lon = -76;
-    //     `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${myKey}`
-
-
+  const myKey = process.env.REACT_APP_WEATHER_API;
+  console.log('weather component is rendering')
+  const lat = 34;
+  const lon = -76;
   const [weatherData, setWeatherData] = useState({
     temp: null,
     humidity: null,
     desc: null,
-    city: null,
+    icon: null
   });
+  useEffect(( ) => {
+      console.log('[useEffect] is triggering')
+      getWeatherData() 
+        fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myKey}`
+          )
+            .then((response) => response.json())
+            .then(data => 
+              // console.log(Math.floor((data.main.temp * 9) / 5 - 459.67), data.main.humidity, data.weather[0].description)
+              // console.log(data)
+              // the code above console.log's the current weather data
+                
+                setWeatherData({
+                temp: Math.floor((data.main.temp * 9) / 5 - 459.67),
+                humidity: data.main.humidity,
+                desc: data.weather[0].description,
+                icon: data.weather[0].icon
+              })
+            )
+      
+      setTimeout(() => {
 
-  function getWeatherData () {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myKey}`)
-    .then(response => response.json())
-    .then(data => console.log(data))
+      }, 8.64e+7)
+  }, [])
+
+  function getWeatherData() {
+    // fetch(
+    //   `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myKey}`
+    // )
+    //   .then((response) => response.json())
+    //   .then(data => setWeatherData({
+    //       temp: Math.floor((data.main.temp * 9) / 5 - 459.67),
+    //       humidity: data.main.humidity,
+    //       desc: data.weather[0].description,
+    //     })
+    //   )
   }
-  getWeatherData();
+//   getWeatherData() // this is where the infinite loop happens
+
+
+
 
   return (
-    <section className="weatherBox">
+    <section className="weatherBox" >
       <h5>Current Weather on the Farm</h5>
-      <p className="temp">15 degrees</p>
-      <p className="weatherDescription">Cloudy</p>
+      
       <section className="weatherInfo">
         {weatherData.temp === null ? (
-        <p>Getting Current Weather <i className="material-icons">wb_sunny</i></p>) : ""}
+          <p>
+            Getting Current Weather <i className="material-icons">wb_sunny</i>
+          </p>
+        ) : (
+          <WeatherInfo data={weatherData} />
+        )}
       </section>
     </section>
   );
