@@ -22,17 +22,18 @@ function WeatherContainer() {
             `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myKey}`
           )
             .then((response) => response.json())
-            .then(data => 
+            .then(data =>  console.log(data)
               // console.log(Math.floor((data.main.temp * 9) / 5 - 459.67), data.main.humidity, data.weather[0].description)
               // console.log(data)
               // the code above console.log's the current weather data
                 
-                setWeatherData({
-                temp: Math.floor((data.main.temp * 9) / 5 - 459.67),
-                humidity: data.main.humidity,
-                desc: data.weather[0].description,
-                icon: data.weather[0].icon
-              })
+              // ======= The Code Below Works.....only Commented out to save API calls =====
+              //   setWeatherData({
+              //   temp: Math.floor((data.main.temp * 9) / 5 - 459.67),
+              //   humidity: data.main.humidity,
+              //   desc: data.weather[0].description,
+              //   icon: data.weather[0].icon
+              // })
             )
       
       setTimeout(() => {

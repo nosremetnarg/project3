@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import roysterLogo from "./royster svg.svg";
 import "./App.css";
 import Weather from "../src/components/Weather/Weather";
+import Random from "../src/components/Random/Random"
 
 class App extends Component {
 constructor (props) {
@@ -22,6 +23,7 @@ constructor (props) {
           <h1>Roysters NC</h1>
           <Weather  />
         </header>
+        <Random className="demo"/>
       </div>
     );
   }
