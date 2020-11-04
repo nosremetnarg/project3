@@ -23,3 +23,4 @@ class weather extends Component  {
 }
 
 export default weather;
+
