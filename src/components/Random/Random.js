@@ -7,7 +7,7 @@ function Random() {
   //     "Thanks to modern food safety, the 'R' policy no longer applies.",
   //   ];
 
-  var myVar = setInterval(myTimer, 3000);
+//   var myVar = setInterval(myTimer, 10000);
   const randomFacts = [
     "",
     "One Oyster can filter 50 gallons of water a day.",
