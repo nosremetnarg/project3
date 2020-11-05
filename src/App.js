@@ -3,8 +3,8 @@ import React, { Component } from "react";
 
 import roysterLogo from "./royster svg.svg";
 import "./App.css";
-import Weather from "../src/components/Weather/Weather";
-import Random from "../src/components/Random/Random"
+import Weather from "./components/Weather/Weather";
+import Random from "./components/Random/Random"
 
 class App extends Component {
 constructor (props) {
@@ -22,8 +22,9 @@ constructor (props) {
           <p>Let's do this :)</p>
           <h1>Roysters NC</h1>
           <Weather  />
+          <span><Random className="random"></Random></span>
         </header>
-        <Random className="demo"/>
+       
       </div>
     );
   }
