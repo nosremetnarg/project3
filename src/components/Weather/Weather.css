@@ -1,17 +1,15 @@
 .weatherBox {
-    background-color: aliceblue;
-    color: black;
-    border: 2px solid white;
+    background-color:#332213;
+    color: rgb(239, 239, 248);
+    /* border: 2px solid rgb(30, 30, 58); */
     box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
-    width: 80%; 
-   
-    
+    width: 30%;     
     align-items: center;
 }
 
 .weatherBox p i {
  color: cornsilk;
- text-shadow: 1.5px 1.5px rgba(0,0,0,0.5);
+ text-shadow: 1.5px 1.5px rgba(88, 49, 124, 0.5);
  animation: rotateSun 20s infinite linear;
 }
 
