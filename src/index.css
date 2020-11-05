@@ -12,12 +12,12 @@ code {
 }
 
 .hero {
-  background-image: url("assets/img/heromaybe.jpg");  
+  background-image: url("assets/img/heromaybe2.jpg");  
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
-  height: 300px;
+  height: 400px;
   width: 100%;
   opacity: .90;
 }
