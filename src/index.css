@@ -36,7 +36,66 @@ nav {
 
 .btn:hover {
   background-color: rgb(236, 231, 231);
-  color: rgb(46, 95, 95);
-  
+  color: rgb(46, 95, 95); 
 
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #dad8cb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.weatherBox {
+  background-color:#271f16;
+  color: rgb(239, 239, 248);
+  /* border: 2px solid rgb(30, 30, 58); */
+  box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
+  width: 30%;     
+  align-items: center;
+}
+
+.weatherBox p i {
+color: cornsilk;
+text-shadow: 1.5px 1.5px rgba(88, 49, 124, 0.5);
+animation: rotateSun 20s infinite linear;
+}
+
+@keyframes rotateSun {
+  to {
+      transform: rotate(360deg);
+  }
 }
