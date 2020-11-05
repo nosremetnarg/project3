@@ -1,5 +1,4 @@
 import React, { Component, useState, useEffect } from "react";
-import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import dotenv from "dotenv";
 require("dotenv").config();
